@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4; 
+}
+
+header {
+  text-align: center;
+  background-image: url(../img/FotosDeHtml/header.jpeg); 
+  background-size: cover; 
+  background-position: center; 
+  color: white; 
+  padding: 20px 0; 
+  position: relative; 
+  border-radius: 10px;
+}
+
+h1, h2 {
+  position: relative; 
+  z-index: 1; 
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 0; 
+}
+h1 {
+  font-size: 2.5em; 
+  margin: 0; 
+  animation: fadeIn 1s; 
+}
+
+h2 {
+  font-size: 1.8em; 
+  margin: 10px 0;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 15px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: aquamarine;
+}
+
+button:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05);
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkblue; 
+  text-decoration: underline; 
+}
+
+#call-to-action a {
+  display: inline-block; 
+  padding: 10px 20px;
+  background-color: #28a745; 
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+#call-to-action a:hover {
+  background-color: #218838;
+  transform: scale(1.05); 
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.box-img {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom: 20px; 
+  text-align: justify;
+}
+
+.content {
+  flex: 1; 
+  margin-right: 20px; 
+}
+
+.image-box {
+  max-width: 300px; 
+  height: auto; 
+}
+
+@media (max-width: 768px) {
+  .box-img {
+      flex-direction: column;
+      align-items: flex-start; 
+  }
+
+  .content {
+      margin-right: 0; 
+      margin-bottom: 20px;
+  }
+
+  .image-box {
+      max-width: 100%; 
+  }
+}
